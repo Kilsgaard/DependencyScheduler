@@ -1,0 +1,9 @@
+C:\Users\GKi\GITRepos\Kilsgaard\DependencyScheduler\DependencyScheduler\bin\Debug\DependencyScheduler.dacpac
+C:\Users\GKi\GITRepos\Kilsgaard\DependencyScheduler\DependencyScheduler\bin\Debug\DependencyScheduler.dll
+C:\Users\GKi\GITRepos\Kilsgaard\DependencyScheduler\DependencyScheduler\bin\Debug\DependencyScheduler.pdb
+C:\Users\GKi\GITRepos\Kilsgaard\DependencyScheduler\DependencyScheduler\bin\Debug\master.dacpac
+C:\Users\GKi\GITRepos\Kilsgaard\DependencyScheduler\DependencyScheduler\bin\Debug\msdb.dacpac
+C:\Users\GKi\GITRepos\Kilsgaard\DependencyScheduler\DependencyScheduler\obj\Debug\DependencyScheduler.sqlproj.CopyComplete
+C:\Users\GKi\GITRepos\Kilsgaard\DependencyScheduler\DependencyScheduler\obj\Debug\DependencyScheduler.dll
+C:\Users\GKi\GITRepos\Kilsgaard\DependencyScheduler\DependencyScheduler\obj\Debug\DependencyScheduler.pdb
+C:\Users\GKi\GITRepos\Kilsgaard\DependencyScheduler\DependencyScheduler\obj\Debug\DependencyScheduler.sqlprojAssemblyReference.cache

@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>DependencyScheduler</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{fc9dbdef-0137-40cb-a88b-9052fcf331bd}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>DependencyScheduler</RootNamespace>
+    <AssemblyName>DependencyScheduler</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Security\" />
+    <Folder Include="Stored Procedures" />
+    <Folder Include="Stored Procedures\flw" />
+    <Folder Include="Functions" />
+    <Folder Include="Functions\flw" />
+    <Folder Include="Sequences" />
+    <Folder Include="Sequences\flw" />
+    <Folder Include="Tables" />
+    <Folder Include="Views" />
+    <Folder Include="Tables\flw" />
+    <Folder Include="Views\flw" />
+    <Folder Include="Synonyms" />
+    <Folder Include="Synonyms\dbo" />
+    <Folder Include="Functions\utl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Security\utl.sql" />
+    <Build Include="Security\log.sql" />
+    <Build Include="Security\flw.sql" />
+    <Build Include="Stored Procedures\flw\StopRunningSqlAgentJobs.sql" />
+    <Build Include="Stored Procedures\flw\AddFlowDebugMessage.sql" />
+    <Build Include="Stored Procedures\flw\AGent_AktiverBatch.sql" />
+    <Build Include="Stored Procedures\flw\AGent_AktiverNaeste.sql" />
+    <Build Include="Stored Procedures\flw\AGent_ExecuteJob.sql" />
+    <Build Include="Stored Procedures\flw\AGent_MailtoTrelloboard.sql" />
+    <Build Include="Stored Procedures\flw\AGent_StartNaeste.sql" />
+    <Build Include="Stored Procedures\flw\AGentFejlJob.sql" />
+    <Build Include="Stored Procedures\flw\AGentSkipJob.sql" />
+    <Build Include="Stored Procedures\flw\AGentStartJob.sql" />
+    <Build Include="Stored Procedures\flw\AGentStopJob.sql" />
+    <Build Include="Stored Procedures\flw\BatchStart.sql" />
+    <Build Include="Stored Procedures\flw\BatchStop.sql" />
+    <Build Include="Stored Procedures\flw\HandlerForColumnStoreIndex.sql" />
+    <Build Include="Stored Procedures\flw\JobAutoRestarter.sql" />
+    <Build Include="Stored Procedures\flw\OpdaterAGentJobsNextRun.sql" />
+    <Build Include="Stored Procedures\flw\OpretNyAfhaengighed.sql" />
+    <Build Include="Stored Procedures\flw\OpretNyBatchID.sql" />
+    <Build Include="Stored Procedures\flw\OpretNytJob.sql" />
+    <Build Include="Stored Procedures\flw\Scheduler_Initialiser.sql" />
+    <Build Include="Stored Procedures\flw\Scheduler_OpdaterVersion.sql" />
+    <Build Include="Stored Procedures\flw\SkiftJobAktiv.sql" />
+    <Build Include="Stored Procedures\flw\SkiftJobDeaktiveret.sql" />
+    <Build Include="Stored Procedures\flw\SkiftStatus.sql" />
+    <Build Include="Stored Procedures\flw\SkrivJobListeKommentar.sql" />
+    <Build Include="Stored Procedures\flw\SkrivLog.sql" />
+    <Build Include="Stored Procedures\flw\SletAfhaengighed.sql" />
+    <Build Include="Stored Procedures\flw\SletJob.sql" />
+    <Build Include="Functions\flw\StatusIDVenter.sql" />
+    <Build Include="Functions\flw\Agent_JobAfhaengighed.sql" />
+    <Build Include="Functions\flw\Agent_JobAfhaengighedDisabled.sql" />
+    <Build Include="Functions\flw\Agent_JobAfhaengighedSkip.sql" />
+    <Build Include="Functions\flw\Agent_JobAfhaengighedSlut.sql" />
+    <Build Include="Functions\flw\AgentJobEnabled.sql" />
+    <Build Include="Functions\flw\BatchStartJob.sql" />
+    <Build Include="Functions\flw\BatchStartJobID.sql" />
+    <Build Include="Functions\flw\BatchStartNextRun.sql" />
+    <Build Include="Functions\flw\BatchStopJob.sql" />
+    <Build Include="Functions\flw\BatchStopJobID.sql" />
+    <Build Include="Functions\flw\CurrentBatchID.sql" />
+    <Build Include="Functions\flw\ExistsAfhaengighed.sql" />
+    <Build Include="Functions\flw\ExistsAgentJobSchedule.sql" />
+    <Build Include="Functions\flw\ExistsJobID.sql" />
+    <Build Include="Functions\flw\ExistsJobListe.sql" />
+    <Build Include="Functions\flw\ExistsJobName.sql" />
+    <Build Include="Functions\flw\ExistsStatusID.sql" />
+    <Build Include="Functions\flw\JobAktiv.sql" />
+    <Build Include="Functions\flw\JobID2Name.sql" />
+    <Build Include="Functions\flw\JobName2ID.sql" />
+    <Build Include="Functions\flw\JobStatusID.sql" />
+    <Build Include="Functions\flw\ScheduleCalcNextRun.sql" />
+    <Build Include="Functions\flw\ScheduleNextRun.sql" />
+    <Build Include="Functions\flw\StatusID2Beskrivelse.sql" />
+    <Build Include="Functions\flw\StatusIDAfvikler.sql" />
+    <Build Include="Functions\flw\StatusIDBatchSlut.sql" />
+    <Build Include="Functions\flw\StatusIDBatchStart.sql" />
+    <Build Include="Functions\flw\StatusIDDebug.sql" />
+    <Build Include="Functions\flw\StatusIDFaerdig.sql" />
+    <Build Include="Functions\flw\StatusIDFejl.sql" />
+    <Build Include="Functions\flw\StatusIDGenstarter.sql" />
+    <Build Include="Functions\flw\StatusIDInaktiv.sql" />
+    <Build Include="Functions\flw\StatusIDInaktivKlar.sql" />
+    <Build Include="Functions\flw\StatusIDKlar.sql" />
+    <Build Include="Functions\flw\StatusIDManuelStart.sql" />
+    <Build Include="Functions\flw\StatusIDSchedulerStart.sql" />
+    <Build Include="Functions\flw\StatusIDSprungetOver.sql" />
+    <Build Include="Functions\flw\StatusIDUdenforBatch.sql" />
+    <Build Include="Sequences\flw\SEQBatchID.sql" />
+    <Build Include="Tables\flw\FailedJobsToTrello.sql" />
+    <Build Include="Tables\flw\FlowDebugLog.sql" />
+    <Build Include="Tables\flw\JobAfhaengighed.sql" />
+    <Build Include="Tables\flw\JobAfhaengighed_20190403.sql" />
+    <Build Include="Tables\flw\JobListe.sql" />
+    <Build Include="Tables\flw\JobListe_20190403.sql" />
+    <Build Include="Tables\flw\JobLog.sql" />
+    <Build Include="Tables\flw\JobMasterSetup.sql" />
+    <Build Include="Tables\flw\JobMasterSetupHist.sql" />
+    <Build Include="Tables\flw\JobsForExecution.sql" />
+    <Build Include="Tables\flw\JobStatus.sql" />
+    <Build Include="Tables\flw\JobType.sql" />
+    <Build Include="Tables\flw\SchedulerDebugLog.sql" />
+    <Build Include="Tables\flw\TableForColumnStoreIndexTable.sql" />
+    <Build Include="Views\flw\ListJobs.sql" />
+    <Build Include="Views\flw\ListAfhængighedmedNavn.sql" />
+    <Build Include="Views\flw\ListAgentJobs.sql" />
+    <Build Include="Views\flw\ListJobLog.sql" />
+    <Build Include="Synonyms\dbo\sysschedules.sql" />
+    <Build Include="Synonyms\dbo\sp_start_job.sql" />
+    <Build Include="Synonyms\dbo\sp_stop_job.sql" />
+    <Build Include="Synonyms\dbo\syscategories.sql" />
+    <Build Include="Synonyms\dbo\sysjobactivity.sql" />
+    <Build Include="Synonyms\dbo\sysjobs.sql" />
+    <Build Include="Synonyms\dbo\sysjobschedules.sql" />
+    <Build Include="Synonyms\dbo\sysjobsteps.sql" />
+    <Build Include="Functions\utl\CamelCase.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\msdb.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\msdb.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>msdb</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+  </ItemGroup>
+</Project>
